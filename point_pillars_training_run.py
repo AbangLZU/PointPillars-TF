@@ -18,11 +18,11 @@ from train_utils import parse_data_ids, parse_data_from_ids
 
 def generate_config_from_cmd_args():
     parser = argparse.ArgumentParser(description='PointPillars training')
-    parser.add_argument('--gpu_idx', default=9, type=int, required=False, 
+    parser.add_argument('--gpu_idx', default=0, type=int, required=False, 
         help='GPU index to use for inference')
     parser.add_argument('--imageset_path', default=None, type=str, required=True,
         help='Path to the root folder containing train_img_ids.txt and val_img_ids.txt')
-    parser.add_argument('--data_root', default=None, type=str, required=True, 
+    parser.add_argument('--data_root', default='/media/data/kitti-3d/kitti', type=str, required=True, 
         help='Training/Validation data root path holding folders velodyne, calib')
     parser.add_argument('--model_root', default='./logs/', required=True,
         help='Path for dumping training logs and model weights')

@@ -1,3 +1,41 @@
+# PointPillar with TF
+
+### 环境安装
+
+准备conda环境，推荐使用miniconda，新建conda环境：
+
+```bash
+conda create -n tensorflow python=3.8
+conda activate tensorflow
+conda install tensorflow-gpu
+pip install tensorflow_probability==0.12.1 sklearn opencv-python easydict tqdm
+```
+
+### 数据准备：
+
+```bash
+├── training    <-- 7481 train data
+   |   ├── calib
+   |   ├── label_2
+   |   ├── velodyne
+└── testing     <-- 7580 test data
+           ├── calib
+           ├── velodyne
+```
+
+
+### 开始训练
+
+```bash
+python point_pillars_training_run.py --imageset_path=./image_sets/ --data_root=/media/data/kitti-3d/kitti/training/ --model_root=./logs/
+```
+
+一共训练160个epoch，训练完成后，运行推理：
+
+```bash
+python point_pillars_inference.py  --data_root=/media/data/kitti-3d/kitti/testing  --result_dir=./results/ --model_path=./logs/model.h5
+```
+
 
 # Codebase Information
 The base code has been taken from [tyagi-iiitv/PointPillars](https://github.com/tyagi-iiitv/PointPillars) GitHub repository.

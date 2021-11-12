@@ -8,7 +8,7 @@ from readers import KittiDataReader
 from config import Parameters
 from network import build_point_pillar_graph
 
-DATA_ROOT = "../training"
+DATA_ROOT = "/media/data/kitti-3d/kitti/training"
 MODEL_ROOT = "./logs"
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"

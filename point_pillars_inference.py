@@ -17,7 +17,7 @@ from tqdm import tqdm
 
 def generate_config_from_cmd_args():
     parser = argparse.ArgumentParser(description='PointPillars inference on test data.')
-    parser.add_argument('--gpu_idx', default=2, type=int, required=False, 
+    parser.add_argument('--gpu_idx', default=0, type=int, required=False, 
         help='GPU index to use for inference')
     parser.add_argument('--data_root', default=None, type=str, required=True, 
         help='Test data root path holding folders velodyne, calib')
@@ -25,9 +25,9 @@ def generate_config_from_cmd_args():
         help='Path for dumping result labels in KITTI format')
     parser.add_argument('--model_path', default='./logs/model.h5', type=str, required=False,
         help='Path to the model weights to be used for inference')
-    parser.add_argument('--occ_thresh', default=0.7, type=float, required=False,
+    parser.add_argument('--occ_thresh', default=0.4, type=float, required=False,
         help='Occlusion threshold for predicted boxes')
-    parser.add_argument('--nms_thresh', default=0.5, type=float, required=False, 
+    parser.add_argument('--nms_thresh', default=0.3, type=float, required=False, 
         help='IoU threshold for NMS')
     
     configs = edict(vars(parser.parse_args()))

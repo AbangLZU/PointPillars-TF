@@ -20,7 +20,7 @@ class PointPillarsTest(unittest.TestCase):
         self.file_name = "000020" # single car test image
         # self.file_name = "000067" # multi-object file
 
-        root_path = "/media/ADAS1/ADAS_LiDAR/KITTI/Extracted_Data/testing/data/object"
+        root_path = "/media/data/kitti-3d/kitti/training"
         # root_path = r"E:\LiDAR_OD\KITTI\data\test_data\data\object"
         image_file = os.path.join(root_path, "image_2", "{}.png".format(self.file_name))
         lidar_data_file = os.path.join(root_path, "velodyne", "{}.bin".format(self.file_name))
